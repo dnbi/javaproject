@@ -78,22 +78,22 @@ public class Quixo extends JFrame implements ActionListener{
 			for (int j=0; j<5; j++) {
 				push[i][j] = new JButton();
 				if (i==0) {
-					push[i][j].setText("¡ã");
+					push[i][j].setText("â–²");
 					push[i][j].setPreferredSize(new Dimension(105, 42));
 					push[i][j].addActionListener(this);	
 				}
 				else if (i==1) {
-					push[i][j].setText("¡å");
+					push[i][j].setText("â–¼");
 					push[i][j].setPreferredSize(new Dimension(105, 42));
 					push[i][j].addActionListener(this);
 				}
 				else if (i==2) {
-					push[i][j].setText("¢º");
+					push[i][j].setText("â–¶");
 					push[i][j].setPreferredSize(new Dimension(47, 100));
 					push[i][j].addActionListener(this);
 				}
 				else if (i==3) {
-					push[i][j].setText("¢¸");
+					push[i][j].setText("â—€");
 					push[i][j].setPreferredSize(new Dimension(47, 100));
 					push[i][j].addActionListener(this);
 				}
@@ -130,25 +130,25 @@ public class Quixo extends JFrame implements ActionListener{
 	
 	public void move(String cmd, int row, int col) {
 		String b = block[row][col].getText();
-		if (cmd.equals("¡ã")) {
+		if (cmd.equals("â–²")) {
 			for (int i=row; i<4; i++) {
 				block[i][col].setText(block[i+1][col].getText());
 			}
 			block[4][col].setText(b);
 		}
-		else if (cmd.equals("¡å")) {
+		else if (cmd.equals("â–¼")) {
 			for (int i=row; i>0; i--) {
 				block[i][col].setText(block[i-1][col].getText());
 			}
 			block[0][col].setText(b);
 		}
-		else if (cmd.equals("¢º")) {
+		else if (cmd.equals("â–¶")) {
 			for (int i=col; i>0; i--) {
 				block[row][i].setText(block[row][i-1].getText());
 			}
 			block[row][0].setText(b);
 		}
-		else if (cmd.equals("¢¸")) {
+		else if (cmd.equals("â—€")) {
 			for (int i=col; i<4; i++) {
 				block[row][i].setText(block[row][i+1].getText());
 			}
